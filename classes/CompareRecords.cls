@@ -16,7 +16,7 @@ global class CompareRecords {
 				Type classType = Type.forName(objDef.getName());
 				Map<String, SObjectField> fields = objDef.fields.getMap();
 
-				Set<String> fieldsToExclude = new Set<String>{ 'Id' };
+				Set<String> fieldsToExclude = new Set<String>{};
 				if(current.fieldsToExcludeList != null)
 					fieldsToExclude = new Set<String>(current.fieldsToExcludeList.replaceAll('\\s','').split(','));
 				for(String field : fields.keySet()) {
